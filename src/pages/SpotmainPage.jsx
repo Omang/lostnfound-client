@@ -141,14 +141,15 @@ const SpotmainPage = () => {
             </div>
             <div className="grid border">
                 
-                <table>
+                <table> 
                     <thead className="text-center text-2xl text-white underline">Documents</thead>
-                     {docs && docs.length > 0 && docs.map(doc=>(
+                       <tbody>{docs && docs.length > 0 && docs.map(doc=>(
                         <tr className="text-white hover:bg-black ">
                             <td>{doc.doc_type.cat_name}</td>
                             <td>{doc.doc_owner}</td>
                         </tr>
-                     ))} 
+                     ))}</tbody>
+                      
                 </table>
                 
                 </div>

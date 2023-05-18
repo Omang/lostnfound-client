@@ -48,12 +48,11 @@ const OwnerPayments = () => {
         <Adminmenu />
         <div className="mt-32 grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
              <table className="border rounded-md">
-                <thead>
-                    <th>Fullname</th>
+             <th>Fullname</th>
                     <th>Amount</th>
                     <th>Reference Num</th>
                     <th>Accept</th>
-                </thead>
+                
              {payque && payque.length > 0 && payque.map(payx=>(
               
                 <tbody>

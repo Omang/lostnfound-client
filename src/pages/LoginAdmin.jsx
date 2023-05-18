@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useContext, useState } from "react"
-import { AiOutlineLogin } from "react-icons/ai"
+import { AiOutlineCloseCircle, AiOutlineLogin } from "react-icons/ai"
 import { UserContext } from "../UserContext";
 import { BarLoader } from "react-spinners";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import NotificationContext from "../NotificationContext";
 import Notification from "../utils/Notification";
 const LoginAdmin = ()=>{
@@ -55,16 +55,19 @@ const LoginAdmin = ()=>{
       <BarLoader color={'#7ED321'} loading={loading} size={100} />
       :
                 <div className="mb-64  border border-spacing-2 rounded-2xl p-2 border-white-500">
-                <h1 className="text-4xl text-center  mb-4">Login</h1>
+                 <Link  to={'/'} className="text-white hover:bg-black transition ">
+                        <AiOutlineCloseCircle/></Link>
+                        <h1 className="text-4xl text-center  mb-4">Owner Login Only</h1>
+               
                    <form onSubmit={handleSubmit} className="max-w-md mx-auto">
                    {!!handlerror && (
        <div className='inline-flex bg-red-400 rounded-md text-center gap-4'>
          <p className='px-4 text-white'>{handlerror}</p><button onClick={closeerror} className='bg-red-500 px-4 text-white'>X</button>
        </div>
       )}
-                    <input type="text"  value={email} onChange={ev =>setEmail(ev.target.value)} id="" />
-                    <input type="text" value={password} onChange={ev =>setPassword(ev.target.value)} id="" />
-                    <button className="ml-40 hover:bg-black bg-white-300 border px-2 py-1 rounded-full text-white"><AiOutlineLogin color="white" /></button>
+                    <input required='required' type="email"  value={email} onChange={ev =>setEmail(ev.target.value)} id="" />
+                    <input required='required' type="password" value={password} onChange={ev =>setPassword(ev.target.value)} id="" />
+                    <button type="submit" className="ml-40 hover:bg-black bg-white-300 border px-2 py-1 rounded-full text-white"><AiOutlineLogin color="white" /></button>
                    </form>
                 </div>
 }
