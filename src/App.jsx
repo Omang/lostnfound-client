@@ -22,7 +22,7 @@ import OwnerPayments from './components/OwnerPayments'
 import FinderDetailsPage from './pages/FinderDetailsPage'
 
 
-axios.defaults.baseURL = 'http://127.0.0.1:5000/api';
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 axios.defaults.withCredentials = true;
 
 function App() {
