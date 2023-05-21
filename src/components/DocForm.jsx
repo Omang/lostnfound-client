@@ -44,7 +44,7 @@ const DocForm = ()=>{
         const data = {doc_type:doctype, doc_owner:docowner, 
             doc_description:docdes, doc_fee:docfee, doc_images:addedphotos};
             console.log(data);
-   axios.post('/doc/createdoc', data).then((response)=>{
+   axios.post('/api/doc/createdoc', data).then((response)=>{
        const doc = response.data;
        if(doc){
         setLoading(false);
@@ -65,7 +65,7 @@ const DocForm = ()=>{
     const getCategories = ()=>{
     
        
-            axios.get('/doc/allcats').then((response)=>{
+            axios.get('/api/doc/allcats').then((response)=>{
                 setCats(response.data);
            }).catch(err=>{
             setLoading(false);    

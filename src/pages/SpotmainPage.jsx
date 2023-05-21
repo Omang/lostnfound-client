@@ -107,7 +107,7 @@ const SpotmainPage = () => {
         transport_way: formeditdata.transport
 
     }
-    axios.put('/user/updatefinder/'+ editContactid, editformvalues).then(response=>{
+    axios.put('/api/user/updatefinder/'+ editContactid, editformvalues).then(response=>{
         if(response.data){
             notificationHandler({type:'warning', message:'Spot Updated Added..Thanks'});
          

@@ -17,12 +17,7 @@ const OwnerPage = () => {
   
     async function Logout(){
        const {token} = user;
-        await axios.get('/api/user/logout', {
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}` 
-            }
-          });
+        await axios.get('/api/user/logout');
          
         
           notificationHandler({type:'warning', message:'LogOut success...Thanks'});
