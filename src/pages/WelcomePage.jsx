@@ -14,7 +14,7 @@ const WelcomePage = () => {
   const [openModal, setOpenModal] = useState(false);
   const [redirect, setRedirect] =useState(null);
   const getdocs = ()=>{
-    axios.get('/doc/allDocs').then(response=>{
+    axios.get('/api/doc/allDocs').then(response=>{
       setDocs(response.data);
     }).catch(err=>{ 
       setErr(err.message.data);
