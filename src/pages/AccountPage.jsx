@@ -16,9 +16,7 @@ const AccountPage = () => {
  
   
     async function Logout(){
-       const {token} = user;
-        await axios.get('/api/user/logout');
-         
+      
           notificationHandler({type:'warning', message:'LogOut success...Next time'});
           
         setRedirect('/');
