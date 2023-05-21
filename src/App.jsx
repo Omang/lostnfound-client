@@ -25,6 +25,8 @@ const datax = import.meta.env.VITE_REACT_APP_SERVER_URL
 
 axios.defaults.baseURL = datax;
 axios.defaults.withCredentials = true;
+axios.defaults.credentials = 'include';
+axios.defaults.headers = {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}
 
 function App() {
 
