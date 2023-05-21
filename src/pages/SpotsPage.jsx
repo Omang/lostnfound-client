@@ -40,7 +40,7 @@ const SpotsPage = () => {
 
     const allspots = ()=>{
         setLoading(true);
-        axios.get('/user/findall').then(response=>{
+        axios.get('/api/user/findall').then(response=>{
            setSpots(response.data);
            setLoading(false); 
         }).catch(err=>{
@@ -51,7 +51,7 @@ const SpotsPage = () => {
     const addnewSpot = (ev)=>{
         ev.preventDefault();
         setCreatenew(false);
-        axios.post('/user/addfinder',{finder_name:formdata.finder,
+        axios.post('/api/user/addfinder',{finder_name:formdata.finder,
         location:formdata.location,
       cipa: formdata.cipa,
     email: formdata.email,

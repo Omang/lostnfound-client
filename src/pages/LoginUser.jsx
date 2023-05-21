@@ -26,7 +26,7 @@ const LoginUser = ()=>{
         setLoading(true);
        try {
              
-    const {data} = await axios.put('/user/finderlog', {email,password});
+    const {data} = await axios.put('/api/user/finderlog', {email,password});
    
         setUser(data); 
         setReady(true);

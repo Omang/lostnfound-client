@@ -24,7 +24,7 @@ const DocForm = ()=>{
 
     const getdoc = async()=>{
         setLoading(true);
-        const {data} = await axios.get('/doc/getDoc'+id);
+        const {data} = await axios.get('/api/doc/getDoc'+id);
         setLoading(false);
         if(data){
             setDoctype(data.doc_type);

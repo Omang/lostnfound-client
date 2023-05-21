@@ -29,7 +29,7 @@ const WelcomePage = () => {
     setValue(searchitem);
     console.log(searchitem);
     console.log(id);
-    axios.get('/doc/getDoc/'+id).then(response=>{
+    axios.get('/api/doc/getDoc/'+id).then(response=>{
       setValue('');
       setResult(response.data);
    }).catch(err=>{

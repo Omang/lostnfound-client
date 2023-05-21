@@ -11,7 +11,7 @@ const DocPayPage = () => {
     const [modaldata, setModaldata] = useState('');
     const [doc, setDoc] = useState('');
     const getdetails = ()=>{
-        axios.get('/doc/paymentdetails').then(response=>{
+        axios.get('/api/doc/paymentdetails').then(response=>{
             setPayDetails(response.data);
         }).catch(err=>{
             setErr(err.message.data);
@@ -21,7 +21,7 @@ const DocPayPage = () => {
     const paydoc=(ev, pay)=>{
         if(!id) return;
 
-        axios.get('/doc/processpayment/'+id).then(response=>{
+        axios.get('/api/doc/processpayment/'+id).then(response=>{
             
             setModaldata(response.data);
             setOpenModal(true);
@@ -35,7 +35,7 @@ const DocPayPage = () => {
     }
     const getdoc = ()=>{
         if(!id) return;
-        axios.get('/doc/getDoc/'+id).then(response=>{
+        axios.get('/api/doc/getDoc/'+id).then(response=>{
            setDoc(response.data);
         }).catch(err=>{
             setErr(err);

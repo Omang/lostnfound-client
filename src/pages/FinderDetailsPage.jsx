@@ -13,7 +13,7 @@ const FinderDetailsPage = () => {
 
     const getDetails = ()=>{
         setLoading(true)
-        axios.get('/doc/getDoc/'+id).then(response=>{
+        axios.get('/api/doc/getDoc/'+id).then(response=>{
             setLoading(false);
             setLocationdetails(response.data);
 

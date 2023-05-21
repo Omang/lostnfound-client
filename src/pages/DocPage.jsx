@@ -15,7 +15,7 @@ const DocPage = () => {
     const collectdoc=(ev, docid)=>{
 
         ev.preventDefault();
-        axios.get('/doc/collectdoc/'+docid).then(response=>{
+        axios.get('/api/doc/collectdoc/'+docid).then(response=>{
              
             if(response.data){
                 notificationHandler({type:'success', message:'Document collected..Thanks'});
@@ -33,7 +33,7 @@ const DocPage = () => {
 
     const getdoc = ()=>{
         setLoading(true);
-        axios.get('/doc/getDoc/'+id).then(response=>{
+        axios.get('/api/doc/getDoc/'+id).then(response=>{
            setDoc(response.data); 
         }).catch(err=>{
             setLoading(false);

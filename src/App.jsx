@@ -20,9 +20,10 @@ import DocPayPage from './pages/DocPayPage'
 import Notification from './utils/Notification'
 import OwnerPayments from './components/OwnerPayments'
 import FinderDetailsPage from './pages/FinderDetailsPage'
+import RegisterAdmin from './pages/RegisterAdmin'
 const datax = import.meta.env.VITE_REACT_APP_SERVER_URL
 
-axios.defaults.baseURL = process.env.datax;
+axios.defaults.baseURL = datax;
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 
       <Route index element={<WelcomePage />} />
       <Route path='/login' element={<LoginUser />} />
+      <Route path='/registeruser' element={<RegisterAdmin />} />
       <Route path='/account' element={<AccountPage />} />
       <Route path='/account/docs' element={<UserPage />} />
       <Route path='/account/docs/new' element={<DocForm />} />

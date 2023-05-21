@@ -14,7 +14,7 @@ const OwnerPayments = () => {
     const {notificationHandler} = useContext(NotificationContext);
    
     const getItems = ()=>{
-        axios.get('/doc/allDocs').then(response=>{
+        axios.get('/api/doc/allDocs').then(response=>{
             SetPayque(response.data);
           }).catch(err=>{ 
             setErr(err.message.data);
@@ -24,7 +24,7 @@ const OwnerPayments = () => {
     const acceptPay = (ev, pay)=>{
        ev.preventDefault();
        
-       axios.get('/doc/paydoc/'+pay._id).then(response=>{
+       axios.get('/api/doc/paydoc/'+pay._id).then(response=>{
         notificationHandler({type:'success', message:'Payment Success..Thanks'});
 
         forceUpdate();

@@ -46,7 +46,7 @@ const SpotmainPage = () => {
 
 
     const getspot = ()=>{
-       axios.get('/user/getfinder/'+id).then(response=>{              
+       axios.get('/api/user/getfinder/'+id).then(response=>{              
            setSpot(response.data.getfinder);
        }).catch(err=>{
            setError(err.message.data);
@@ -55,7 +55,7 @@ const SpotmainPage = () => {
     }
     const getdocs = ()=>{
         setLoadiing(true);
-        axios.get('/doc/getfinderdocs/'+id).then(response=>{
+        axios.get('/api/doc/getfinderdocs/'+id).then(response=>{
            setLoadiing(false);
            setDocs(response.data);
         })

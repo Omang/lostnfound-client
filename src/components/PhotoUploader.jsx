@@ -19,7 +19,7 @@ const PhotoUploader = ({addedphotos, onChange}) => {
             datav.append('photos', files[i]);     
         }
 
-     const {data:filenames} =  await axios.post('/doc/upload', datav, {
+     const {data:filenames} =  await axios.post('/api/doc/upload', datav, {
             headers:{'Content-Type': 'multipart/form-data'}
         });
      

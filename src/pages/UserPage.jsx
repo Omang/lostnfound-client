@@ -13,7 +13,7 @@ const UserPage = ()=>{
 
   const finderdocs = async()=>{
 
-    await axios.get('/doc/finderdocs').then(response=>{
+    await axios.get('/api/doc/finderdocs').then(response=>{
       setDocs(response.data);
     }).catch((err)=>{32
       setError(err.message);

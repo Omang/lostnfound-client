@@ -24,7 +24,7 @@ const LoginAdmin = ()=>{
         setLoading(true);
        try {
              
-    const {data} = await axios.put('/user/login', {email,password});
+    const {data} = await axios.put('/api/user/login', {email,password});
         
         setUser(data); 
         setReady(true);
@@ -69,6 +69,8 @@ const LoginAdmin = ()=>{
                     <input required='required' type="password" value={password} onChange={ev =>setPassword(ev.target.value)} id="" />
                     <button type="submit" className="ml-40 hover:bg-black bg-white-300 border px-2 py-1 rounded-full text-white"><AiOutlineLogin color="white" /></button>
                    </form>
+                   <Link className="text-white cursor-pointer border-b m-2 hover:text-black" to={'/registeruser'}>
+                    Register</Link>
                 </div>
 }
             </div>

@@ -17,7 +17,7 @@ const AccountPage = () => {
   
     async function Logout(){
        const {token} = user;
-        await axios.get('/user/logout', {
+        await axios.get('/api/user/logout', {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}` 
