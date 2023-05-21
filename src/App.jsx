@@ -20,9 +20,9 @@ import DocPayPage from './pages/DocPayPage'
 import Notification from './utils/Notification'
 import OwnerPayments from './components/OwnerPayments'
 import FinderDetailsPage from './pages/FinderDetailsPage'
+const datax = import.meta.env.VITE_REACT_APP_SERVER_URL
 
-
-axios.defaults.baseURL = process.env.REACT_APP_SERVER_URL;
+axios.defaults.baseURL = process.env.datax;
 axios.defaults.withCredentials = true;
 
 function App() {
