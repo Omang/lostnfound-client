@@ -10,12 +10,14 @@ const UserPage = ()=>{
   const [docs, setDocs] = useState([]);
   const [error, setError]= useState('');
   const [loading, setLoading]= useState(false);
+  
+  const id= user._id;
 
   const finderdocs = async()=>{
 
-    await axios.get('/api/doc/finderdocs').then(response=>{
+    await axios.get('/api/doc/finderdocs/'+id).then(response=>{
       setDocs(response.data);
-    }).catch((err)=>{32
+    }).catch((err)=>{
       setError(err.message);
         throw err;
         
@@ -24,8 +26,9 @@ const UserPage = ()=>{
   }
 
   useEffect(()=>{
+    if(!id) return;
     finderdocs();
-  },[])
+  },[id])
 
     return (
         <div>
