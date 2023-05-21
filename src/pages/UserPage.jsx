@@ -10,9 +10,9 @@ const UserPage = ()=>{
   const [docs, setDocs] = useState([]);
   const [error, setError]= useState('');
   const [loading, setLoading]= useState(false);
-  
-  const id= user._id;
 
+  const id= user._id;
+console.log(id);
   const finderdocs = async()=>{
 
     await axios.get('/api/doc/finderdocs/'+id).then(response=>{
@@ -47,7 +47,7 @@ const UserPage = ()=>{
           <Link to={'/account/docs/doc/'+doc._id}  key={doc._id}>
           <div className="bg-gray-500 rounded-2xl mb-2 flex ">
           {doc.doc_images.length > 0 && (
-                            <img className="rounded-2xl object-cover aspect-square" src={'http://localhost:5000/uploads/'+doc.doc_images[0]} alt="" />
+                            <img className="rounded-2xl object-cover aspect-square" src={'https://lostnfound-api.onrender.com/'+doc.doc_images[0]} alt="" />
                         )}
           </div>
 
