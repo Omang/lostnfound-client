@@ -12,7 +12,7 @@ const UserPage = ()=>{
   const [loading, setLoading]= useState(false);
 
   const id= user._id;
-console.log(id);
+
   const finderdocs = async()=>{
 
     await axios.get('/api/doc/finderdocs/'+id).then(response=>{

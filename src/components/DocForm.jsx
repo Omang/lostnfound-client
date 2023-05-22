@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react"
 import { Navigate, useParams } from "react-router-dom"
 import Usermenu  from "../components/Usermenu";
@@ -12,6 +12,7 @@ import PhotoUploader from "./PhotoUploader";
 
 const DocForm = ()=>{
     const {id} = useParams();
+    const {user} = useContext(UserContext);
     const [cats, setCats] = useState([]);
     const [addedphotos, setAddedphotos] = useState([]);
     const [doctype, setDoctype] = useState('');
@@ -40,10 +41,11 @@ const DocForm = ()=>{
         setLoading(true);
         ev.preventDefault();
        if(!id){
-
+        const finder= user._id;
         const data = {doc_type:doctype, doc_owner:docowner, 
-            doc_description:docdes, doc_fee:docfee, doc_images:addedphotos};
-            console.log(data);
+            doc_description:docdes, doc_fee:docfee, doc_images:addedphotos,
+            finder:finder};
+            
    axios.post('/api/doc/createdoc', data).then((response)=>{
        const doc = response.data;
        if(doc){
