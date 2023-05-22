@@ -22,6 +22,7 @@ const DocForm = ()=>{
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const [redirect, setRedirect] = useState(null);
+    const finder= user._id;
 
     const getdoc = async()=>{
         setLoading(true);
@@ -41,7 +42,7 @@ const DocForm = ()=>{
         setLoading(true);
         ev.preventDefault();
        if(!id){
-        const finder= user._id;
+        
         const data = {doc_type:doctype, doc_owner:docowner, 
             doc_description:docdes, doc_fee:docfee, doc_images:addedphotos,
             finder:finder};
