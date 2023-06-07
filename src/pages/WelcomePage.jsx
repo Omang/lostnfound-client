@@ -43,7 +43,7 @@ const WelcomePage = () => {
     <div className="flex">
       <div className="flex-grow h-screen">
        
-        <div className='justify-center max-w-md mx-auto items-center mt-8 text-center'>
+        <div className='justify-center max-w-md mx-auto items-center mt-8 pr-16 text-center'>
       <div className='text-2xl text-white mt-8 '>
        Find your Lost Document
       </div>
@@ -71,21 +71,21 @@ const WelcomePage = () => {
        </div>
       
     </div>
-    <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-8 mr-8'> 
+    <div className='flex-col lg:text-center  lg:w-2/4  xs:pr-16  mr-8'> 
       {!!result && value ==='' && (
-        <div className='flex border-b mt-8'>
-         <div className='border-l px-2 text-white uppercase'>{result.doc_owner}</div>
-         <div className="border-l px-2 text-white uppercase">{result.doc_description}</div>
+        <div className='flex p-2 bg-gray-300 bg-opacity-20 border rounded-2xl mt-8'>
+         <div className=' px-2 sm:text-sm text-white uppercase'>{result.doc_owner}</div>
+         <div className="border-l sm:text-sm px-2 text-white uppercase">{result.doc_description}</div>
          {result.doc_paid ?
           <div className="border-l px-2 text-white uppercase">{result.collected? 
-            <div className='text-green'>collected..thanks</div>:<div>Collect</div>}
+            <div className='text-green'>collected.</div>:<div>Collect</div>}
             </div>:
           <Link to={'/payment/pay/'+result._id} className="hover:bg-green-300 border-l px-2 uppercase">PAY NOW: {result.doc_fee}</Link>
           }
-          <div className="border-l px-2 text-white ">
+          <div >
             {result.doc_images && result.doc_images.length > 0 && (
-              <div>
-                <button onClick={()=>setOpenModal(true)} className='text-xs text-white hover:scale-95 transition border rounded-2xl m-2 px-2 py-1'>
+              <div className="border-l px-2 text-white ">
+                <button onClick={()=>setOpenModal(true)} className='text-xs text-white hover:bg-green-200 hover:text-black hover:scale-95 transition border rounded-2xl m-2 px-2 py-1'>
                   view images</button>
                   
               </div>
