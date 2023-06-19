@@ -66,12 +66,12 @@ const DocPage = () => {
                 <div>
                     {doc.doc_images?.[0] && (
                         <div>
-                            <img className="aspect-square object-cover" src={'https://lostnfound-api.onrender.com/'+doc.doc_images?.[0]} />
+                            <img className="aspect-square object-cover" src={'https://lostnfound-api.onrender.com/uploads/'+doc.doc_images?.[0]} />
                         </div>
                     )}
                 </div>
                 <div className="grid gap-2"> {doc.doc_images?.[1] && (
-                        <img className="aspect-square object-cover" src={'https://lostnfound-api.onrender.com/'+doc.doc_images?.[1]} />
+                        <img className="aspect-square object-cover" src={'https://lostnfound-api.onrender.com/uploads/'+doc.doc_images?.[1]} />
                     )}</div>
 
             </div> 

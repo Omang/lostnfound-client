@@ -17,7 +17,7 @@ const Adminmenu = () => {
        return classes;
     }
   return (
-    <nav className="fixed w-full flex justify-center bg-gray-50 bg-opacity-40 mt-16  gap-4 ">
+    <nav className="fixed w-auto flex justify-center bg-gray-50 bg-opacity-40 mt-16  gap-4 ">
     <Link className={linkClasses('profile')} to={'/owner'}>Account</Link>
     <Link className={linkClasses('spots')} to={'/owner/spots'}>Spots</Link>
     <Link className={linkClasses('payments')} to={'/owner/payments'}>Payments</Link>

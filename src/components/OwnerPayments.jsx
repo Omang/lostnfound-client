@@ -23,13 +23,15 @@ const OwnerPayments = () => {
 
     const acceptPay = (ev, pay)=>{
        ev.preventDefault();
-       
+       setLoading(true)
        axios.get('/api/doc/paydoc/'+pay._id).then(response=>{
+        setLoading(false);
         notificationHandler({type:'success', message:'Payment Success..Thanks'});
-
+        
         forceUpdate();
 
        }).catch(err=>{
+        setLoading(false);
         notificationHandler({type:'error', message:'Oops!..Sorry.Try again'});
           throw err;
        })
@@ -62,8 +64,9 @@ const OwnerPayments = () => {
                             <td className="border-l">{payx.doc_owner}</td>
                             <td className="border-l">P{payx.doc_fee}</td> 
                             <td className="border-l">{payx.doc_ref}</td>
-                            <td className="border-l">{payx.doc_paid? <Link to={'/owner/payments/collect/finder/'+payx._id} className="border hover:bg-green-300 rounded-sm bg-white">View Finder</Link> :
-                             <button onClick={(ev)=>acceptPay(ev, payx)} className="border hover:bg-green-300 rounded-sm bg-white">PAY</button>}</td>
+                            <td className="border-l">{payx.doc_paid? <Link to={'/owner/payments/collect/finder/'+payx._id} className="border hover:bg-green-300 rounded-sm bg-white">View Finder</Link>
+                             :
+                           <button onClick={(ev)=>acceptPay(ev, payx)} className="border hover:bg-green-300 rounded-sm bg-white">PAY</button>}</td>
                        </tr>
                         
                     )}

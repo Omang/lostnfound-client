@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
-    <div className='p-4 flex flex-col bg-gradient-to-r from-purple-500 to-pink-500 min-h-screen'>
+    <div className='relative container p-4 mx-auto flex flex-col bg-gradient-to-r from-blue-500 to-gray-400 min-h-screen'>
       <Header />
       <Outlet />
     </div>

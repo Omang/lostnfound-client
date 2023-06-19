@@ -17,7 +17,7 @@ const Usermenu = () => {
        return classes;
     }
   return (
-    <nav className="fixed w-full flex justify-center bg-gray-50 bg-opacity-40 mt-16 -mt-16 gap-4 ">
+    <nav className="fixed w-auto flex justify-center bg-gray-50 bg-opacity-40 mt-16 -mt-16 gap-4 ">
     <Link className={linkClasses('profile')} to={'/account'}>Account</Link>
     <Link className={linkClasses('docs')} to={'/account/docs'}>Documents</Link>
     <Link className={linkClasses('payment')} to={'/account/payment'}>Payments</Link>

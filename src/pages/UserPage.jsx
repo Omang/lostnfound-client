@@ -33,7 +33,7 @@ const UserPage = ()=>{
     return (
         <div>
           <Usermenu />
-          <div className="mt-32 px-4 py-4">
+          <div className="flex flex-col mx-auto mt-32 px-4 py-4">
           <div>
           <Link to={'/account/docs/new'} className='hover:bg-black 
           rounded-2xl  border py-2 px-2 border-white text-white '>Add Document</Link>
@@ -42,12 +42,13 @@ const UserPage = ()=>{
       loading ?
       <BarLoader color={'white'} loading={loading} size={100} />
       :
-         <div className='mt-8 grid gap-6 grid-cols-3 md:grid-cols-4 lg:grid-cols-6'>
+         <div className=' mt-8 flex md:flex-row flex-col justify-start mx-1 '>
           {docs && docs.length > 0 && docs.map(doc=>(
-          <Link to={'/account/docs/doc/'+doc._id}  key={doc._id}>
+          <div className='md:w-1/2 w-64 ml-4 mb-3 '>
+            <Link to={'/account/docs/doc/'+doc._id}  key={doc._id}>
           <div className="bg-gray-500 rounded-2xl mb-2 flex ">
           {doc.doc_images.length > 0 && (
-                            <img className="rounded-2xl object-cover aspect-square" src={'https://lostnfound-api.onrender.com/'+doc.doc_images[0]} alt="" />
+                            <img className="rounded-2xl object-cover aspect-square" src={'http://localhost:5000/uploads/'+doc.doc_images[0]} alt="" />
                         )}
           </div>
 
@@ -61,6 +62,7 @@ const UserPage = ()=>{
                    </div>
           
           </Link>
+          </div>
          ))}
          </div>
 }

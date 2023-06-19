@@ -40,16 +40,16 @@ const WelcomePage = () => {
        getdocs();
   },[])
   return (
-    <div className="flex">
-      <div className="flex-grow h-screen">
+    <div className="container flex flex-col">
+      <div className="">
        
-        <div className='justify-center max-w-md mx-auto items-center mt-8 pr-16 text-center'>
-      <div className='text-2xl text-white mt-8 '>
+        <div className='justify-center max-w-sm mx-auto items-center mt-8  text-center'>
+      <div className='text-2xl font-serif text-white mt-8 '>
        Find your Lost Document
       </div>
-      <div className='flex '>
+      <div className=''>
         <input 
-      className='mt-4 px-5 py-1 relative'
+      className='mt-4 px-5 py-1 relative text-white'
        placeholder='Type and press on your result item...' 
        type='text' value={value} onChange={onchange} />
        
@@ -71,21 +71,21 @@ const WelcomePage = () => {
        </div>
       
     </div>
-    <div className='flex-col lg:text-center  lg:w-2/4  xs:pr-16  mr-8'> 
+    <div className='flex flex-col lg:text-center  lg:w-2/4  xs:pr-16  mr-8'> 
       {!!result && value ==='' && (
-        <div className='flex p-2 bg-gray-300 bg-opacity-20 border rounded-2xl mt-8'>
-         <div className=' px-2 sm:text-sm text-white uppercase'>{result.doc_owner}</div>
-         <div className="border-l sm:text-sm px-2 text-white uppercase">{result.doc_description}</div>
+        <div className='flex p-2 bg-gray-300 bg-opacity-20 border-b mt-8 max-w-sm'>
+         <div className=' sm:text-sm text-white uppercase'>{result.doc_owner}</div>
+         <div className="border-l sm:text-sm  text-white uppercase">{result.doc_description}</div>
          {result.doc_paid ?
-          <div className="border-l px-2 text-white uppercase">{result.collected? 
+          <div className="border-l  text-white uppercase">{result.collected? 
             <div className='text-green'>collected.</div>:<div>Collect</div>}
             </div>:
-          <Link to={'/payment/pay/'+result._id} className="hover:bg-green-300 border-l px-2 uppercase">PAY NOW: {result.doc_fee}</Link>
+          <Link to={'/payment/pay/'+result._id} className="hover:bg-green-300 border-l  uppercase">PAY NOW: {result.doc_fee}</Link>
           }
           <div >
             {result.doc_images && result.doc_images.length > 0 && (
-              <div className="border-l px-2 text-white ">
-                <button onClick={()=>setOpenModal(true)} className='text-xs text-white hover:bg-green-200 hover:text-black hover:scale-95 transition border rounded-2xl m-2 px-2 py-1'>
+              <div className="text-white ">
+                <button onClick={()=>setOpenModal(true)} className='text-xs text-white  hover:text-black hover:scale-95 transition '>
                   view images</button>
                   
               </div>

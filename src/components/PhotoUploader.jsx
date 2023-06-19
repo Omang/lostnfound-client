@@ -49,7 +49,7 @@ const PhotoUploader = ({addedphotos, onChange}) => {
         <div className="mt-2 grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                         {addedphotos && addedphotos.length > 0 && addedphotos.map(photo=>(
                             <div className="h-32 flex relative" key={photo}>
-                              <img className="rounded-2xl w-full object-cover" src={'https://lostnfound.co.bw/uploads/'+photo} /> 
+                              <img className="rounded-2xl w-full object-cover" src={'https://lostnfound-api.onrender.com/uploads/'+photo} /> 
                               <button onClick={ev=>removePic(ev, photo)} className="cursor-pointer absolute bottom-1 right-1 text-white bg-black bg-opacity-50 rounded-2xl py-1 px-2">
                                 < AiOutlineDelete />
                                 </button> 
